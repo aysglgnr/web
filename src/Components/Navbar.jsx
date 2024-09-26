@@ -27,6 +27,8 @@ function Navbar() {
                 <li><Link to='#'>Header</Link></li>
                 <li><Link to='#'>Analysis</Link></li>
                 <li><Link to='#'>Education</Link></li>
+                <li><Link to='#'>Analysis</Link></li>
+                <li><Link to='#'>Education</Link></li>
             </ul>
 
         </nav>

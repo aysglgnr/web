@@ -7,7 +7,7 @@ import Education from './Components/Education';
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Navbar/>
      <Header/> 
      <Education/>
      <Analysis/>

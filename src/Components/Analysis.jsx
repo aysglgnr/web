@@ -69,8 +69,7 @@ const Analysis = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Microplastic Heatmap</h1>
+        <div >
             <div id="map" style={{ height: "600px", width: "100%" }}></div>
         </div>
     );
