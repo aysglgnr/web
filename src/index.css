@@ -4,7 +4,7 @@
 body{
     margin:0px;
     padding: 0px;
-    background-color: #0f0000;
+    background-color: #00090aad;
     font-family: 'Lato', sans-serif;
 }
 *{
@@ -73,22 +73,22 @@ nav{
     transition: 0.6s ease-in-out;
 }
 nav.active{
-	box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.157);
-	background-color: #0000003b;
+	box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.397);
+	background-color: #0000007a;
 }
 nav ul{
 	display: flex;
 }
 .active{
-    background-color: #14efff;
+    background-color: #000a0a27;
     color:#ffffff;
-	box-shadow: 5px 10px 30px rgba(11, 59, 192, 0.411);
+	box-shadow: 5px 10px 30px rgba(22, 164, 230, 0.411);
 	transition: all ease 0.2s;
 }
 .active:hover{
-    background-color: #000000;
+    background-color: #010c1431;
     color:#ffffff;
-	box-shadow: 5px 10px 30px rgba(47, 72, 216, 0.541);
+	box-shadow: 5px 10px 30px rgba(60, 179, 248, 0.384);
 	transition: all ease 0.2s;
 }
 nav ul li a{
@@ -126,7 +126,7 @@ nav .menu-btn,
 	transform: translate(-50%,-55%);
 }
 .name span{
-    color: #3f14ff;
+    color: #1a48e0;
 }
 .name .details{
     font-size: 23px;
@@ -167,7 +167,7 @@ nav .menu-btn,
 	background-color: transparent;
     transition: all ease 0.5s;
     color: #ffffff;
-    border: 2px solid #1453ff;
+    border: 2px solid #148dff;
 }
 
 
@@ -221,8 +221,8 @@ nav .menu-btn,
 
 }
 .a-box:hover{
-    border: 1px solid #1814ff;
-    box-shadow: 2px 2px 12px rgba(16, 20, 255, 0.445);
+    border: 1px solid #2185f8;
+    box-shadow: 2px 2px 12px rgba(16, 207, 255, 0.445);
 }
 .a-b-text{
     width: 100%;
@@ -280,7 +280,7 @@ nav .menu-btn,
 	transform: translate(-50%,-55%);
 }
 .pr-heading span{
-    color: #144bff;
+    color: #4989db;
 }
 .pr-heading .details{
     font-size: 23px;
@@ -309,7 +309,7 @@ nav .menu-btn,
     align-items: center;
     font-size: 1.4rem;
     background-color: #143fff;
-    box-shadow: 5px 10px 30px rgba(69, 2, 255, 0.336);
+    box-shadow: 5px 10px 30px rgba(2, 196, 255, 0.507);
     border-radius: 5px;
 	color:#ffffff;
 }
@@ -317,7 +317,7 @@ nav .menu-btn,
 	background-color: transparent;
     transition: all ease 0.5s;
     color: #ffffff;
-    border: 2px solid #2414ff;
+    border: 2px solid #147aff;
 }
 
 
@@ -341,7 +341,7 @@ nav .menu-btn,
 }
 .about-text h1{
 	font-size: 3rem;
-	color:#3f14ff;
+	color:#143fff96;
     font-weight: 500;
     margin: 0px;
 	padding: 0px;
@@ -556,8 +556,8 @@ nav .menu-btn,
             position:absolute;
             top:65px;
             left:0px;
-            background-color:#000000;
-            border-bottom:4px solid #2b14ff;
+            background-color:#0000009c;
+            border-bottom:4px solid #14a9ff36;
             width:100%;
             padding:0px;
             margin:0px;
