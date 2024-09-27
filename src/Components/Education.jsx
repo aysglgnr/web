@@ -2,7 +2,7 @@ import React from 'react'
 
 function Education() {
     return (
-    <div id='main'>
+    <div id='education'><div></div>
 
     </div>
     )

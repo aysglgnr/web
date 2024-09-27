@@ -37,6 +37,16 @@ input{
     position: relative;
     z-index: 0;
 }
+#education{
+    width:100%;
+    height:768px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('./images/banner.png');
+    position: relative;
+    z-index: 0;
+}
 #main::before{
     position: absolute;
     content: "";
