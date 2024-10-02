@@ -16,7 +16,7 @@ function Analysis() {
 
     return (
         <div id="map" style={{ position: 'relative', width: '100%', height: '100vh', fontFamily: 'Lato, sans-serif' }}>
-            <div style={{ marginBottom: '20px', position: 'absolute', top: 32, right: 0, zIndex: 10 }}>
+            <div style={{ marginBottom: '20px', position: 'absolute', top: 90, right: 0, zIndex: 10 }}>
                 <label htmlFor="mapSelect" style={{ marginRight: '10px', fontWeight: 'bold', fontSize: '16px' }}></label>
                 <select
                     id="mapSelect"
@@ -38,9 +38,9 @@ function Analysis() {
                     onMouseOut={(e) => e.target.style.border = '1px solid #ccc'}
                 >
                     <option value="" disabled>Choose Heatmap</option>
-                    <option value="advsci">Study Area Heatmap</option>
-                    <option value="map2">Map 2</option>
-                    <option value="map3">Map 3</option>
+                    <option value="advsci1">Adventure Scientist Study Area Heatmap 1</option>
+                    <option value="geo">GeoMarine Study Area Heatmap</option>
+                    <option value="advsci2">Adventure Scientist Study Area Heatmap 2</option>
                 </select>
             </div>
 
@@ -67,13 +67,13 @@ function Analysis() {
                     width: '100%',
                     height: '100%',
                     border: 'none',
-                    zIndex: selectedMap === "advsci" ? 1 : 0,
-                    display: selectedMap === "advsci" ? 'block' : 'none'
+                    zIndex: selectedMap === "advsci1" ? 1 : 0,
+                    display: selectedMap === "advsci1" ? 'block' : 'none'
                 }}
-                title="Study Area Map"
+                title="AdvSci1"
             />
             <iframe
-                src="/heatmap.html"
+                src="/geo.html"
                 style={{
                     position: 'absolute',
                     top: 0,
@@ -81,13 +81,13 @@ function Analysis() {
                     width: '100%',
                     height: '100%',
                     border: 'none',
-                    zIndex: selectedMap === "map2" ? 1 : 0,
-                    display: selectedMap === "map2" ? 'block' : 'none'
+                    zIndex: selectedMap === "geo" ? 1 : 0,
+                    display: selectedMap === "geo" ? 'block' : 'none'
                 }}
-                title="Map 2"
+                title="GeoMarine"
             />
             <iframe
-                src="/heatmap.html"
+                src="/advsci2.html"
                 style={{
                     position: 'absolute',
                     top: 0,
@@ -95,10 +95,10 @@ function Analysis() {
                     width: '100%',
                     height: '100%',
                     border: 'none',
-                    zIndex: selectedMap === "map3" ? 1 : 0,
-                    display: selectedMap === "map3" ? 'block' : 'none'
+                    zIndex: selectedMap === "advsci2" ? 1 : 0,
+                    display: selectedMap === "advsci2" ? 'block' : 'none'
                 }}
-                title="Map 3"
+                title="AdvSci2"
             />
         </div>
     );
