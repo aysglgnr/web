@@ -15,7 +15,7 @@ function Analysis() {
     }, []);
 
     return (
-        <div id="map2" style={{ position: 'relative', width: '100%', height: '100vh', fontFamily: 'Lato, sans-serif' }}>
+        <div id="map" style={{ position: 'relative', width: '100%', height: '100vh', fontFamily: 'Lato, sans-serif' }}>
             <div style={{ marginBottom: '20px', position: 'absolute', top: 32, right: 0, zIndex: 10 }}>
                 <label htmlFor="mapSelect" style={{ marginRight: '10px', fontWeight: 'bold', fontSize: '16px' }}></label>
                 <select
@@ -58,7 +58,6 @@ function Analysis() {
                     <p>You can make a map selection from the menu above.</p>
                 </div>
             )}
-
             <iframe
                 src="/advsci.html"
                 style={{

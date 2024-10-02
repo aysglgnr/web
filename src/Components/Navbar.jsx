@@ -32,7 +32,8 @@ function Navbar() {
             <ul className='menu'>
                 <li><Link to='main' smooth={true} duration={500}>Header</Link></li>
                 <li><Link to='education' smooth={true} duration={500}>Education</Link></li>
-                <li><Link to='map2' smooth={true} duration={500}>Map</Link></li>
+                <li><Link to='flip' smooth={true} duration={500}>Report</Link></li>
+                <li><Link to='map' smooth={true} duration={500}>Map</Link></li>
                 {/* Gereksiz tekrarları kaldırdım */}
             </ul>
         </nav>
