@@ -23,7 +23,11 @@ import img19 from '../images/19.png';
 import img20 from '../images/20.png';
 import img21 from '../images/21.png';
 import img22 from '../images/22.png';
-
+import img23 from '../images/23.png';
+import img24 from '../images/24.png';
+import img25 from '../images/25.png';
+import img26 from '../images/26.png';
+import img27 from '../images/27.png';
 
 const Flipbook = () => {
   const flipBook = useRef(null);
@@ -34,7 +38,7 @@ const Flipbook = () => {
   // Load the sound file only once
   useEffect(() => {
     flipSound.current = new Audio(flipSoundFile);
-    flipSound.current.preload = 'auto';  // Preload the sound file
+    flipSound.current.preload = 'auto';
   }, []);
 
   // Track window size and dynamically adjust page dimensions
@@ -54,8 +58,8 @@ const Flipbook = () => {
   // Play sound when the page is flipped
   const handlePageFlip = () => {
     if (flipSound.current) {
-      flipSound.current.currentTime = 0;  // Restart the sound from the beginning
-      flipSound.current.play();           // Play the sound
+      flipSound.current.currentTime = 0;
+      flipSound.current.play();
     }
   };
 
@@ -69,8 +73,8 @@ const Flipbook = () => {
   };
 
   // Dynamic size calculation (width and height)
-  const bookWidth = Math.min(windowWidth * 0.8, 420); // Use 80% of screen width
-  const bookHeight = Math.min(windowHeight * 0.8, 594); // Use 80% of screen height
+  const bookWidth = Math.min(windowWidth * 0.8, 420);
+  const bookHeight = Math.min(windowHeight * 0.8, 594);
 
   return (
     <div id="flip" style={styles.container}>
@@ -79,49 +83,26 @@ const Flipbook = () => {
         width={bookWidth} 
         height={bookHeight} 
         ref={flipBook}
-        onFlip={handlePageFlip} // Attach the page flip sound function
-        className="shadow-xl" // Higher quality shadow
-        flippingTime={600} // Page flip duration
-        maxShadowOpacity={0.6} // Increased shadow opacity
-        showCover={true} // Show the cover page
+        onFlip={handlePageFlip}
+        className="shadow-xl"
+        flippingTime={600}
+        maxShadowOpacity={0.6}
+        showCover={true}
       >
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img1} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img2} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img3} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img4} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img5} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img6} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img7} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img8} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img9} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img10} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img11} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img12} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img13} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img14} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img15} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img16} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img17} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img18} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img19} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img20} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img21} alt='' style={styles.image}/></div>
-        <div className="page" style={{ ...styles.page, height: bookHeight }}><img src={img22} alt='' style={styles.image}/></div>
+        {[...Array(27).keys()].map(i => (
+          <div className="page" key={i + 1} style={{ ...styles.page, height: bookHeight }}>
+            <img src={require(`../images/${i + 1}.png`)} alt='' style={styles.image}/>
+          </div>
+        ))}
       </HTMLFlipBook>
 
       {/* Left arrow button */}
-      <div 
-        onClick={prevPage} 
-        style={styles.arrowLeft}
-      >
+      <div onClick={prevPage} style={styles.arrowLeft}>
         &#9664;
       </div>
 
       {/* Right arrow button */}
-      <div 
-        onClick={nextPage} 
-        style={styles.arrowRight}
-      >
+      <div onClick={nextPage} style={styles.arrowRight}>
         &#9654;
       </div>
     </div>
@@ -136,29 +117,30 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    backgroundColor: '#fafafa', // Light background color
-    overflow: 'hidden', // Prevent overflow of pages
+    backgroundColor: '#fafafa',
+    overflow: 'hidden',
   },
   page: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     fontSize: '24px',
-    backgroundColor: '#ffffff',  // White page background
-    border: '1px solid #ddd', // Border around the page
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Light shadow
-    borderRadius: '8px', // Rounded corners
+    backgroundColor: '#ffffff',
+    border: '1px solid #ddd',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    borderRadius: '8px',
+    aspectRatio: '3 / 4', // Aspect ratio for all devices
   },
   image: {
-    width: '100%',  // Adjust image width to fit the page
+    width: '100%',
     height: '100%',
-    objectFit: 'cover', // Ensure the image fits without overflow
-    borderRadius: '4px', // Slightly rounded image corners
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)', // Image shadow
+    objectFit: 'cover',
+    borderRadius: '4px',
+    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
   },
   arrowLeft: {
     position: 'absolute',
-    left: '20px',  // Closer to the edge, no overflow
+    left: '20px',
     top: '50%',
     transform: 'translateY(-50%)',
     cursor: 'pointer',
@@ -167,12 +149,12 @@ const styles = {
     backgroundColor: '#333',
     borderRadius: '50%',
     padding: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Soft shadow effect
-    zIndex: 1, // Ensure it's above the book
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    zIndex: 1,
   },
   arrowRight: {
     position: 'absolute',
-    right: '20px',  // Closer to the edge, no overflow
+    right: '20px',
     top: '50%',
     transform: 'translateY(-50%)',
     cursor: 'pointer',
@@ -181,8 +163,8 @@ const styles = {
     backgroundColor: '#333',
     borderRadius: '50%',
     padding: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Soft shadow effect
-    zIndex: 1, // Ensure it's above the book
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    zIndex: 1,
   }
 };
 
