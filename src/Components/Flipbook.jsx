@@ -1,39 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import flipSoundFile from './turnPage.mp3';
-import img1 from '../images/1.png';
-import img2 from '../images/2.png';
-import img3 from '../images/3.png';
-import img4 from '../images/4.png';
-import img5 from '../images/5.png';
-import img6 from '../images/6.png';
-import img7 from '../images/7.png';
-import img8 from '../images/8.png';
-import img9 from '../images/9.png';
-import img10 from '../images/10.png';
-import img11 from '../images/11.png';
-import img12 from '../images/12.png';
-import img13 from '../images/13.png';
-import img14 from '../images/14.png';
-import img15 from '../images/15.png';
-import img16 from '../images/16.png';
-import img17 from '../images/17.png';
-import img18 from '../images/18.png';
-import img19 from '../images/19.png';
-import img20 from '../images/20.png';
-import img21 from '../images/21.png';
-import img22 from '../images/22.png';
-import img23 from '../images/23.png';
-import img24 from '../images/24.png';
-import img25 from '../images/25.png';
-import img26 from '../images/26.png';
-import img27 from '../images/27.png';
 
 const Flipbook = () => {
   const flipBook = useRef(null);
   const flipSound = useRef(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
 
   // Load the sound file only once
   useEffect(() => {
@@ -45,7 +17,6 @@ const Flipbook = () => {
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
-      setWindowHeight(window.innerHeight);
     };
     
     window.addEventListener('resize', handleResize);
@@ -72,9 +43,10 @@ const Flipbook = () => {
     flipBook.current.pageFlip().flipPrev();
   };
 
-  // Dynamic size calculation (width and height)
-  const bookWidth = Math.min(windowWidth * 0.8, 420);
-  const bookHeight = Math.min(windowHeight * 0.8, 594);
+  // Dynamic size calculation (A4 aspect ratio: 210mm x 297mm)
+  const a4AspectRatio = 297 / 210;
+  const bookWidth = Math.min(windowWidth * 0.8, 420); // Limit width to 420px
+  const bookHeight = bookWidth * a4AspectRatio; // A4 proportional height
 
   return (
     <div id="flip" style={styles.container}>
