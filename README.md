@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 
-# The Colab containing the Python code and outputs on the Report page
+# The Python code containing the analyses on the Report page
 
 Access can be provided via this link (https://colab.research.google.com/drive/13D05EMUCrJw-iXzHamSvkHSoGdsJMdO7?usp=sharing#scrollTo=sxxcvupYRlpz)
 
